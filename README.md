@@ -37,7 +37,7 @@ don't already have Gemini API key, create a key in Google AI Studio on the
 Run the `adk create` command to start a new agent project.
 
 ```shell
-adk create my_agent
+adk create my_agent --model gemini-2.5-flash-lite --api_key $GOOGLE_API_KEY
 ```
 
 ### Explore the agent project
