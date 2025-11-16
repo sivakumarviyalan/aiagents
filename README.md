@@ -90,11 +90,11 @@ your agent. You can start the web interface using the following command:
 adk web --port 8000
 ```
 
-!!! note
+### note
 
     Run this command from the **parent directory** that contains your
-    `dayXY/` folder. For example, if your agent is inside `agents/dayXY/`,
-    run `adk web` from the `agents/` directory.
+    `dayXY/` folder. For example, if your agent is inside `aiagents/dayXY/`,
+    run `adk web` from the `aiagents/` directory.
 
 This command starts a web server with a chat interface for your agent. You can
 access the web interface at (http://localhost:8000). Select the agent at the
