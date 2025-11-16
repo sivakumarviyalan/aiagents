@@ -29,3 +29,9 @@ print("✅ Root Agent defined.")
 runner = InMemoryRunner(agent=root_agent)
 
 print("✅ Runner created.")
+
+# response = await runner.run_debug(
+#     "What is Agent Development Kit from Google? What languages is the SDK available in?"
+# )
+
+# response = await runner.run_debug("What's the weather in Bloomington, Illinois?")
