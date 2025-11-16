@@ -8,8 +8,6 @@ This guide shows you how to get up and running with Agent Development Kit
 
 ## Installation
 
-Create and activate a Python virtual environment
-
 Create a Python virtual environment:
 
 ```shell
@@ -30,10 +28,16 @@ pip install google-adk
 
 ## Create an agent project
 
+### Set your API key
+
+This project uses the Gemini API, which requires an API key. If you
+don't already have Gemini API key, create a key in Google AI Studio on the
+[API Keys](https://aistudio.google.com/apikey) page.
+
 Run the `adk create` command to start a new agent project.
 
 ```shell
-adk create dayXY
+adk create my_agent --model gemini-2.5-flash-lite --api_key $GOOGLE_API_KEY
 ```
 
 ### Explore the agent project
@@ -42,7 +46,7 @@ The created agent project has the following structure, with the `agent.py`
 file containing the main control code for the agent.
 
 ```none
-dayXY/
+my_agent/
     agent.py      # main agent code
     .env          # API keys or project IDs
     __init__.py
@@ -53,18 +57,6 @@ dayXY/
 The `agent.py` file contains a `root_agent` definition which is the only
 required element of an ADK agent. You can also define tools for the agent to
 use. 
-
-### Set your API key
-
-This project uses the Gemini API, which requires an API key. If you
-don't already have Gemini API key, create a key in Google AI Studio on the
-[API Keys](https://aistudio.google.com/app/apikey) page.
-
-In a terminal window, write your API key into an `.env` file as an environment variable:
-
-```console title="Update: dayXY/.env"
-echo 'GOOGLE_API_KEY="YOUR_API_KEY"' > .env
-```
 
 ## Run your agent
 
@@ -78,7 +70,7 @@ agent.
 Run your agent using the `adk run` command-line tool.
 
 ```console
-adk run dayXY
+adk run my_agent
 ```
 
 ### Run with web interface
@@ -90,11 +82,8 @@ your agent. You can start the web interface using the following command:
 adk web --port 8000
 ```
 
-### note
-
-    Run this command from the **parent directory** that contains your
-    `dayXY/` folder. For example, if your agent is inside `aiagents/dayXY/`,
-    run `adk web` from the `aiagents/` directory.
+    Note: Run this command from the **parent directory** that contains your `my_agent/` folder. 
+    For example, if your agent is inside `aiagents/my_agent/`, run `adk web` from the `aiagents/` directory.
 
 This command starts a web server with a chat interface for your agent. You can
 access the web interface at (http://localhost:8000). Select the agent at the
