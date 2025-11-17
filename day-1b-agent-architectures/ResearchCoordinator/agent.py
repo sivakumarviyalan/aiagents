@@ -3,6 +3,13 @@ from google.adk.models.google_llm import Gemini
 from google.adk.runners import InMemoryRunner
 from google.adk.tools import AgentTool, FunctionTool, google_search
 from google.genai import types
+import asyncio
+
+# Load .env
+# Replace the API_KEY in .env file.
+from dotenv import load_dotenv
+
+load_dotenv()
 
 print("✅ ADK components imported successfully.")
 
@@ -65,6 +72,12 @@ runner = InMemoryRunner(agent=root_agent)
 
 print("✅ Runner created.")
 
-# response = await runner.run_debug(
-#     "What are the latest advancements in quantum computing and what do they mean for AI?"
-# )
+print("Do you what to know: What are the latest advancements in quantum computing and what do they mean for AI?")
+
+async def main():
+    response = await runner.run_debug(
+        "What are the latest advancements in quantum computing and what do they mean for AI?"
+    )
+
+if __name__ == "__main__":
+    asyncio.run(main())

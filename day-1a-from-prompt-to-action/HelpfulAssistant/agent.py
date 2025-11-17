@@ -3,6 +3,13 @@ from google.adk.models.google_llm import Gemini
 from google.adk.runners import InMemoryRunner
 from google.adk.tools import google_search
 from google.genai import types
+import asyncio
+
+# Load .env
+# Replace the API_KEY in .env file.
+from dotenv import load_dotenv
+
+load_dotenv()
 
 print("✅ ADK components imported successfully.")
 
@@ -30,8 +37,13 @@ runner = InMemoryRunner(agent=root_agent)
 
 print("✅ Runner created.")
 
-# response = await runner.run_debug(
-#     "What is Agent Development Kit from Google? What languages is the SDK available in?"
-# )
+print("Do you what to know: What is Agent Development Kit from Google? What languages is the SDK available in?")
 
-# response = await runner.run_debug("What's the weather in Bloomington, Illinois?")
+async def main():
+    response = await runner.run_debug(
+        "What is Agent Development Kit from Google? What languages is the SDK available in?")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+print("or Do you what to know: What's the weather in Bloomington, Illinois?")
