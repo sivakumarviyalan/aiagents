@@ -67,10 +67,16 @@ agent.
 
 ### Run with command-line interface
 
-Run your agent using the `adk run` command-line tool.
+#### Run your agent using the `adk run` command-line tool.
 
 ```console
 adk run my_agent
+```
+
+#### Run your agent programmatically (invoke in `python` way)
+
+```console
+python my_agent/agent.py
 ```
 
 ### Run with web interface
