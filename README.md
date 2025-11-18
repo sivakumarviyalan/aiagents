@@ -1,6 +1,6 @@
 # [Python Quickstart for ADK](https://google.github.io/adk-docs/get-started/python/)
 
-This guide shows you how to get up and running with Agent Development Kit
+This guide shows you how to setup and running with Agent Development Kit
 (ADK) for Python. Before you start, make sure you have the following installed:
 
 *   Python 3.9 or later
@@ -67,7 +67,7 @@ agent.
 
 ### Run with command-line interface
 
-#### Run your agent using the `adk run` command-line tool.
+#### Run your agent using the `adk run` command-line tool
 
 ```console
 adk run my_agent
@@ -75,7 +75,7 @@ adk run my_agent
 
 #### Run your agent programmatically (invoke in `python` way)
 
-```console
+```shell
 python my_agent/agent.py
 ```
 
